@@ -1,0 +1,7 @@
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+13:43:04 [fullcand/M0] status 0 gap 0.0 obj 118.2543 plan(np,ne) {64: (6, 9)} total_ref 121.4784
+14:13:06 [fullcand/M2] status 1 gap None obj nan plan(np,ne) {} total_ref nan
+14:13:06 FULLCAND DONE

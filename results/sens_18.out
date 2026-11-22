@@ -1,0 +1,25 @@
+13:31:28 [kp1.8_cc6/market] candidates (1-idx): [11, 12, 18, 22, 23, 24, 25, 26, 27, 49, 50, 57, 58, 59, 60, 61, 62, 63, 64, 65]
+13:34:32   M0: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 0.00e+00 t 183.5s | proxy cyc 0.000 vs rainflow 1.810 MINR | total_ref 120.121 | vmin 0.9501
+13:37:05   M1: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 0.00e+00 t 152.0s | proxy cyc 0.979 vs rainflow 1.232 MINR | total_ref 119.833 | vmin 0.9501
+13:47:07   M2: plan {64: {'P_MW': 0.5, 'E_MWh': 1.75}, 65: {'P_MW': 0.2, 'E_MWh': 0.5}} gap 5.22e-03 t 600.5s | proxy cyc 1.210 vs rainflow 1.274 MINR | total_ref 120.085 | vmin 0.9502
+13:47:09   M0 plan re-dispatched with M2: total_ref 119.774 cyc_ref 1.274 vmin 0.9501
+13:47:11   M1 plan re-dispatched with M2: total_ref 119.774 cyc_ref 1.274 vmin 0.9501
+13:47:14   M2 plan re-dispatched with M2: total_ref 120.082 cyc_ref 1.274 vmin 0.9502
+13:47:14 [kp1.8_cc9/market] candidates (1-idx): [11, 12, 18, 22, 23, 24, 25, 26, 27, 49, 50, 57, 58, 59, 60, 61, 62, 63, 64, 65]
+13:50:58   M0: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 6.06e-05 t 223.2s | proxy cyc 0.000 vs rainflow 2.715 MINR | total_ref 121.479 | vmin 0.9501
+13:54:54   M1: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 0.00e+00 t 235.4s | proxy cyc 1.468 vs rainflow 1.848 MINR | total_ref 120.900 | vmin 0.9501
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+14:04:56   M2: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 2.73e-03 t 600.8s | proxy cyc 1.815 vs rainflow 1.911 MINR | total_ref 120.861 | vmin 0.9501
+14:04:57   M0 plan re-dispatched with M2: total_ref 120.861 cyc_ref 1.911 vmin 0.9501
+14:04:59   M1 plan re-dispatched with M2: total_ref 120.861 cyc_ref 1.911 vmin 0.9501
+14:05:01   M2 plan re-dispatched with M2: total_ref 120.861 cyc_ref 1.911 vmin 0.9501
+14:05:01 [kp1.8_cc12/market] candidates (1-idx): [11, 12, 18, 22, 23, 24, 25, 26, 27, 49, 50, 57, 58, 59, 60, 61, 62, 63, 64, 65]
+14:07:28   M0: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 0.00e+00 t 146.5s | proxy cyc 0.000 vs rainflow 3.619 MINR | total_ref 122.837 | vmin 0.9501
+14:10:31   M1: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 0.00e+00 t 182.0s | proxy cyc 1.958 vs rainflow 2.464 MINR | total_ref 121.966 | vmin 0.9501
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+14:20:32   M2: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 2.92e-03 t 600.9s | proxy cyc 2.104 vs rainflow 2.215 MINR | total_ref 121.875 | vmin 0.9501
+14:20:35   M0 plan re-dispatched with M2: total_ref 121.875 cyc_ref 2.215 vmin 0.9501
+14:20:38   M1 plan re-dispatched with M2: total_ref 121.875 cyc_ref 2.215 vmin 0.9501
+14:20:40   M2 plan re-dispatched with M2: total_ref 121.875 cyc_ref 2.215 vmin 0.9501
+14:20:40 SENS DONE

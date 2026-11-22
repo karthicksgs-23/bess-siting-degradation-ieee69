@@ -1,0 +1,104 @@
+13:11:30 [base/tod] candidates (1-idx): [11, 12, 18, 22, 23, 24, 25, 26, 27, 49, 50, 57, 58, 59, 60, 61, 62, 63, 64, 65]
+13:13:55   M0: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 4.15e-05 t 144.5s | proxy cyc 0.000 vs rainflow 1.848 MINR | total_ref 124.420 | vmin 0.9503
+13:16:32   M1: plan {65: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 5.75e-05 t 156.5s | proxy cyc 0.890 vs rainflow 0.868 MINR | total_ref 123.995 | vmin 0.9504
+13:24:48   M2: plan {65: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 0.00e+00 t 495.2s | proxy cyc 0.786 vs rainflow 0.824 MINR | total_ref 123.926 | vmin 0.9507
+13:25:09 [base/tod] candidates (1-idx): [11, 12, 18, 22, 23, 24, 25, 26, 27, 49, 50, 57, 58, 59, 60, 61, 62, 63, 64, 65]
+13:27:35   M0: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 4.15e-05 t 145.3s | proxy cyc 0.000 vs rainflow 1.848 MINR | total_ref 124.420 | vmin 0.9503
+13:29:28   M1: plan {65: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 5.75e-05 t 112.5s | proxy cyc 0.890 vs rainflow 0.868 MINR | total_ref 123.995 | vmin 0.9504
+13:31:28 [kp1.8_cc6/market] candidates (1-idx): [11, 12, 18, 22, 23, 24, 25, 26, 27, 49, 50, 57, 58, 59, 60, 61, 62, 63, 64, 65]
+13:31:28 [kp2.4_cc6/market] candidates (1-idx): [11, 12, 18, 22, 23, 24, 25, 26, 27, 49, 50, 57, 58, 59, 60, 61, 62, 63, 64, 65]
+13:31:28 [kp1.2_cc6/market] candidates (1-idx): [11, 12, 18, 22, 23, 24, 25, 26, 27, 49, 50, 57, 58, 59, 60, 61, 62, 63, 64, 65]
+13:34:30   M0: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 0.00e+00 t 180.5s | proxy cyc 0.000 vs rainflow 1.904 MINR | total_ref 120.216 | vmin 0.9501
+13:34:32   M0: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 0.00e+00 t 183.5s | proxy cyc 0.000 vs rainflow 1.810 MINR | total_ref 120.121 | vmin 0.9501
+13:34:34   M0: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 0.00e+00 t 184.6s | proxy cyc 0.000 vs rainflow 1.731 MINR | total_ref 120.042 | vmin 0.9501
+13:34:52   M2: plan {65: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 0.00e+00 t 323.6s | proxy cyc 0.786 vs rainflow 0.824 MINR | total_ref 123.926 | vmin 0.9507
+13:34:54   M0 plan re-dispatched with M2: total_ref 123.940 cyc_ref 0.850 vmin 0.9506
+13:34:55   M1 plan re-dispatched with M2: total_ref 123.926 cyc_ref 0.824 vmin 0.9507
+13:34:57   M2 plan re-dispatched with M2: total_ref 123.926 cyc_ref 0.824 vmin 0.9507
+13:34:57 [base/market] candidates (1-idx): [11, 12, 18, 22, 23, 24, 25, 26, 27, 49, 50, 57, 58, 59, 60, 61, 62, 63, 64, 65]
+13:35:27 [capex11/market] candidates (1-idx): [11, 12, 18, 22, 23, 24, 25, 26, 27, 49, 50, 57, 58, 59, 60, 61, 62, 63, 64, 65]
+13:36:44   M1: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 0.00e+00 t 133.4s | proxy cyc 1.119 vs rainflow 1.232 MINR | total_ref 119.834 | vmin 0.9501
+13:37:05   M1: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 0.00e+00 t 152.0s | proxy cyc 0.979 vs rainflow 1.232 MINR | total_ref 119.833 | vmin 0.9501
+13:37:09   M1: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 0.00e+00 t 154.2s | proxy cyc 1.089 vs rainflow 1.417 MINR | total_ref 119.779 | vmin 0.9501
+13:37:40   M0: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 6.06e-05 t 162.2s | proxy cyc 0.000 vs rainflow 2.715 MINR | total_ref 121.479 | vmin 0.9501
+13:38:54   M0: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 3.32e-05 t 206.8s | proxy cyc 0.000 vs rainflow 2.133 MINR | total_ref 119.691 | vmin 0.9502
+13:40:18   M1: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 0.00e+00 t 157.1s | proxy cyc 1.468 vs rainflow 1.848 MINR | total_ref 120.900 | vmin 0.9501
+13:41:09   M1: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 0.00e+00 t 133.5s | proxy cyc 1.154 vs rainflow 1.452 MINR | total_ref 119.298 | vmin 0.9502
+13:43:04 [fullcand/M0] status 0 gap 0.0 obj 118.2543 plan(np,ne) {64: (6, 9)} total_ref 121.4784
+13:46:46   M2: plan {64: {'P_MW': 0.5, 'E_MWh': 1.75}, 65: {'P_MW': 0.2, 'E_MWh': 0.5}} gap 5.24e-03 t 601.0s | proxy cyc 1.262 vs rainflow 1.328 MINR | total_ref 120.139 | vmin 0.9502
+13:46:48   M0 plan re-dispatched with M2: total_ref 119.829 cyc_ref 1.328 vmin 0.9501
+13:46:50   M1 plan re-dispatched with M2: total_ref 119.829 cyc_ref 1.328 vmin 0.9501
+13:46:52   M2 plan re-dispatched with M2: total_ref 120.136 cyc_ref 1.328 vmin 0.9502
+13:46:52 [kp1.2_cc9/market] candidates (1-idx): [11, 12, 18, 22, 23, 24, 25, 26, 27, 49, 50, 57, 58, 59, 60, 61, 62, 63, 64, 65]
+13:47:07   M2: plan {64: {'P_MW': 0.5, 'E_MWh': 1.75}, 65: {'P_MW': 0.2, 'E_MWh': 0.5}} gap 5.22e-03 t 600.5s | proxy cyc 1.210 vs rainflow 1.274 MINR | total_ref 120.085 | vmin 0.9502
+13:47:09   M0 plan re-dispatched with M2: total_ref 119.774 cyc_ref 1.274 vmin 0.9501
+13:47:11   M1 plan re-dispatched with M2: total_ref 119.774 cyc_ref 1.274 vmin 0.9501
+13:47:12   M2: plan {64: {'P_MW': 0.5, 'E_MWh': 1.75}, 65: {'P_MW': 0.2, 'E_MWh': 0.5}} gap 5.21e-03 t 602.0s | proxy cyc 1.262 vs rainflow 1.328 MINR | total_ref 120.049 | vmin 0.9502
+13:47:14   M2 plan re-dispatched with M2: total_ref 120.082 cyc_ref 1.274 vmin 0.9502
+13:47:14 [kp1.8_cc9/market] candidates (1-idx): [11, 12, 18, 22, 23, 24, 25, 26, 27, 49, 50, 57, 58, 59, 60, 61, 62, 63, 64, 65]
+13:47:14   M0 plan re-dispatched with M2: total_ref 119.741 cyc_ref 1.328 vmin 0.9501
+13:47:16   M1 plan re-dispatched with M2: total_ref 119.741 cyc_ref 1.328 vmin 0.9501
+13:47:19   M2 plan re-dispatched with M2: total_ref 120.046 cyc_ref 1.328 vmin 0.9502
+13:47:19 [kp2.4_cc9/market] candidates (1-idx): [11, 12, 18, 22, 23, 24, 25, 26, 27, 49, 50, 57, 58, 59, 60, 61, 62, 63, 64, 65]
+13:50:27   M0: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 6.06e-05 t 214.2s | proxy cyc 0.000 vs rainflow 2.856 MINR | total_ref 121.621 | vmin 0.9501
+13:50:58   M0: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 6.06e-05 t 223.2s | proxy cyc 0.000 vs rainflow 2.715 MINR | total_ref 121.479 | vmin 0.9501
+13:51:05   M0: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 6.06e-05 t 224.8s | proxy cyc 0.000 vs rainflow 2.596 MINR | total_ref 121.360 | vmin 0.9501
+13:53:18   M1: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 0.00e+00 t 169.0s | proxy cyc 1.679 vs rainflow 1.848 MINR | total_ref 120.898 | vmin 0.9501
+13:53:48   M2: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 0.00e+00 t 809.9s | proxy cyc 1.815 vs rainflow 1.911 MINR | total_ref 120.863 | vmin 0.9501
+13:53:51   M0 plan re-dispatched with M2: total_ref 120.861 cyc_ref 1.911 vmin 0.9501
+13:53:55   M1 plan re-dispatched with M2: total_ref 120.861 cyc_ref 1.911 vmin 0.9501
+13:53:58   M2 plan re-dispatched with M2: total_ref 120.861 cyc_ref 1.911 vmin 0.9501
+13:53:58 BASE DONE
+13:54:29   M1: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 0.00e+00 t 202.9s | proxy cyc 1.284 vs rainflow 1.848 MINR | total_ref 120.902 | vmin 0.9501
+13:54:54   M1: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 0.00e+00 t 235.4s | proxy cyc 1.468 vs rainflow 1.848 MINR | total_ref 120.900 | vmin 0.9501
+13:56:10   M2: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 2.21e-03 t 901.0s | proxy cyc 1.426 vs rainflow 1.501 MINR | total_ref 119.246 | vmin 0.9501
+13:56:13   M0 plan re-dispatched with M2: total_ref 119.246 cyc_ref 1.501 vmin 0.9501
+13:56:17   M1 plan re-dispatched with M2: total_ref 119.246 cyc_ref 1.501 vmin 0.9501
+13:56:20   M2 plan re-dispatched with M2: total_ref 119.246 cyc_ref 1.501 vmin 0.9501
+13:56:20 [capex9/market] candidates (1-idx): [11, 12, 18, 22, 23, 24, 25, 26, 27, 49, 50, 57, 58, 59, 60, 61, 62, 63, 64, 65]
+14:01:17   M0: plan {49: {'P_MW': 1.5, 'E_MWh': 6.0}, 50: {'P_MW': 1.5, 'E_MWh': 6.0}, 57: {'P_MW': 1.4, 'E_MWh': 5.5}} gap 7.26e-05 t 296.6s | proxy cyc 0.000 vs rainflow 12.609 MINR | total_ref 126.526 | vmin 0.9503
+14:03:20   M2: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 3.05e-03 t 601.3s | proxy cyc 1.755 vs rainflow 1.848 MINR | total_ref 120.897 | vmin 0.9501
+14:03:23   M0 plan re-dispatched with M2: total_ref 120.897 cyc_ref 1.848 vmin 0.9501
+14:03:26   M1 plan re-dispatched with M2: total_ref 120.897 cyc_ref 1.848 vmin 0.9501
+14:03:29   M2 plan re-dispatched with M2: total_ref 120.897 cyc_ref 1.848 vmin 0.9501
+14:03:29 [kp1.2_cc12/market] candidates (1-idx): [11, 12, 18, 22, 23, 24, 25, 26, 27, 49, 50, 57, 58, 59, 60, 61, 62, 63, 64, 65]
+14:04:01   M1: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 5.77e-05 t 163.4s | proxy cyc 0.944 vs rainflow 1.188 MINR | total_ref 118.231 | vmin 0.9501
+14:04:30   M2: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 1.46e-03 t 600.5s | proxy cyc 1.489 vs rainflow 1.567 MINR | total_ref 120.780 | vmin 0.9501
+14:04:32   M0 plan re-dispatched with M2: total_ref 120.777 cyc_ref 1.567 vmin 0.9501
+14:04:33   M1 plan re-dispatched with M2: total_ref 120.777 cyc_ref 1.567 vmin 0.9501
+14:04:35   M2 plan re-dispatched with M2: total_ref 120.777 cyc_ref 1.567 vmin 0.9501
+14:04:35 [kp2.4_cc12/market] candidates (1-idx): [11, 12, 18, 22, 23, 24, 25, 26, 27, 49, 50, 57, 58, 59, 60, 61, 62, 63, 64, 65]
+14:04:56   M2: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 2.73e-03 t 600.8s | proxy cyc 1.815 vs rainflow 1.911 MINR | total_ref 120.861 | vmin 0.9501
+14:04:57   M0 plan re-dispatched with M2: total_ref 120.861 cyc_ref 1.911 vmin 0.9501
+14:04:59   M1 plan re-dispatched with M2: total_ref 120.861 cyc_ref 1.911 vmin 0.9501
+14:05:01   M2 plan re-dispatched with M2: total_ref 120.861 cyc_ref 1.911 vmin 0.9501
+14:05:01 [kp1.8_cc12/market] candidates (1-idx): [11, 12, 18, 22, 23, 24, 25, 26, 27, 49, 50, 57, 58, 59, 60, 61, 62, 63, 64, 65]
+14:06:01   M0: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 0.00e+00 t 150.3s | proxy cyc 0.000 vs rainflow 3.808 MINR | total_ref 123.026 | vmin 0.9501
+14:07:00   M0: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 0.00e+00 t 144.8s | proxy cyc 0.000 vs rainflow 3.461 MINR | total_ref 122.678 | vmin 0.9501
+14:07:28   M0: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 0.00e+00 t 146.5s | proxy cyc 0.000 vs rainflow 3.619 MINR | total_ref 122.837 | vmin 0.9501
+14:07:47   M1: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 5.01e-05 t 105.4s | proxy cyc 2.238 vs rainflow 2.464 MINR | total_ref 121.964 | vmin 0.9502
+14:09:41   M1: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 0.00e+00 t 160.3s | proxy cyc 1.713 vs rainflow 2.464 MINR | total_ref 121.965 | vmin 0.9501
+14:10:31   M1: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 0.00e+00 t 182.0s | proxy cyc 1.958 vs rainflow 2.464 MINR | total_ref 121.966 | vmin 0.9501
+14:13:06 [fullcand/M2] status 1 gap None obj nan plan(np,ne) {} total_ref nan
+14:13:06 FULLCAND DONE
+14:17:48   M2: plan {64: {'P_MW': 0.5, 'E_MWh': 1.75}, 65: {'P_MW': 0.2, 'E_MWh': 0.5}} gap 5.76e-03 t 600.8s | proxy cyc 2.341 vs rainflow 2.464 MINR | total_ref 122.272 | vmin 0.9502
+14:17:51   M0 plan re-dispatched with M2: total_ref 121.963 cyc_ref 2.464 vmin 0.9501
+14:17:54   M1 plan re-dispatched with M2: total_ref 121.963 cyc_ref 2.464 vmin 0.9501
+14:17:57   M2 plan re-dispatched with M2: total_ref 122.271 cyc_ref 2.464 vmin 0.9502
+14:17:57 SENS DONE
+14:19:02   M2 FAILED Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)
+14:19:06   M0 plan re-dispatched with M2: total_ref 124.813 cyc_ref 9.554 vmin 0.9503
+14:19:08   M1 plan re-dispatched with M2: total_ref 118.169 cyc_ref 1.228 vmin 0.9501
+14:19:08 [capex7/market] candidates (1-idx): [11, 12, 18, 22, 23, 24, 25, 26, 27, 49, 50, 57, 58, 59, 60, 61, 62, 63, 64, 65]
+14:19:44   M2: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 3.15e-03 t 601.8s | proxy cyc 1.485 vs rainflow 1.560 MINR | total_ref 121.706 | vmin 0.9501
+14:19:47   M0 plan re-dispatched with M2: total_ref 121.706 cyc_ref 1.560 vmin 0.9501
+14:19:50   M1 plan re-dispatched with M2: total_ref 121.706 cyc_ref 1.560 vmin 0.9501
+14:19:52   M2 plan re-dispatched with M2: total_ref 121.706 cyc_ref 1.560 vmin 0.9501
+14:19:52 SENS DONE
+14:20:32   M2: plan {64: {'P_MW': 0.6, 'E_MWh': 2.25}} gap 2.92e-03 t 600.9s | proxy cyc 2.104 vs rainflow 2.215 MINR | total_ref 121.875 | vmin 0.9501
+14:20:35   M0 plan re-dispatched with M2: total_ref 121.875 cyc_ref 2.215 vmin 0.9501
+14:20:38   M1 plan re-dispatched with M2: total_ref 121.875 cyc_ref 2.215 vmin 0.9501
+14:20:40   M2 plan re-dispatched with M2: total_ref 121.875 cyc_ref 2.215 vmin 0.9501
+14:20:40 SENS DONE
+14:25:17   M0: plan {49: {'P_MW': 1.9, 'E_MWh': 6.0}, 50: {'P_MW': 1.9, 'E_MWh': 6.0}, 57: {'P_MW': 1.5, 'E_MWh': 6.0}} gap 2.76e-06 t 367.6s | proxy cyc 0.000 vs rainflow 10.656 MINR | total_ref 118.292 | vmin 0.9503
+14:31:58   M1: plan {49: {'P_MW': 1.5, 'E_MWh': 6.0}, 50: {'P_MW': 1.5, 'E_MWh': 6.0}, 61: {'P_MW': 0.9, 'E_MWh': 3.5}} gap 8.55e-05 t 401.0s | proxy cyc 6.577 vs rainflow 7.872 MINR | total_ref 116.494 | vmin 0.9501

@@ -1,0 +1,13 @@
+capex9 relaxed E (1-idx): {62: 0.09, 63: 0.03, 64: 1.48, 65: 0.55} -> M2 candidates [49, 50, 57, 62, 64, 65]
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+capex9 M2 status 0 Optimization terminated successfully. (HiGHS Status 7: Optimal) gap 0.0 t 77
+  M0-own {49: {'P_MW': 1.5, 'E_MWh': 6.0}, 50: {'P_MW': 1.5, 'E_MWh': 6.0}, 57: {'P_MW': 1.4, 'E_MWh': 5.5}} proxy 0.000 rf 12.609 total 126.526
+  M1-own {64: {'P_MW': 0.6, 'E_MWh': 2.25}} proxy 0.944 rf 1.188 total 118.231
+  M2-own {64: {'P_MW': 0.6, 'E_MWh': 2.25}} proxy 1.167 rf 1.228 total 118.171
+  M0-redisp total 124.813 cyc 9.554
+  M1-redisp total 118.169 cyc 1.228
+  M2-redisp total 118.169 cyc 1.228
+saved results/capex_repair_capex9.json
