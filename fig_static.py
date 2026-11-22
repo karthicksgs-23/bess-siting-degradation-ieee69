@@ -30,6 +30,11 @@ def layout():
     return pos
 
 
+# BESS sites chosen by the planning runs (results/analysis.json): bus -> (label, lower-cost case only)
+SITES = {64: ("Case A: M0\nCase B: all", False), 65: ("Case A:\nM1, M2", False),
+         49: ("", True), 50: ("", True), 57: ("M0", True), 61: ("M1, M2", True)}
+
+
 def feeder(chosen=None, path=FIG / "fig1_feeder.png"):
     net = load_case()
     pos = layout()
@@ -42,19 +47,28 @@ def feeder(chosen=None, path=FIG / "fig1_feeder.png"):
             ax.plot([x0, x1], [y0, y1], color="0.35", lw=1.1, zorder=1)
     for b, (x, y) in pos.items():
         ax.scatter(x, y, s=14, color="black", zorder=3)
-        if b in (1, 3, 4, 8, 9, 11, 12, 18, 27, 35, 46, 49, 50, 52, 61, 64, 65, 67, 69):
-            ax.annotate(str(b), (x, y), textcoords="offset points", xytext=(-7, 5), ha="center", fontsize=8)
+        if b in (3, 4, 8, 9, 11, 12, 18, 27, 35, 46, 49, 50, 52, 57, 61, 64, 65, 67, 69):
+            ax.annotate(str(b), (x, y), textcoords="offset points", xytext=(-11, 8) if b in SITES else (-7, 5),
+                        ha="center", fontsize=8)
+    ax.annotate("1", pos[1], textcoords="offset points", xytext=(-12, -3), ha="center", fontsize=8)
     # substation
     ax.scatter(*pos[1], marker="s", s=120, color="#444444", zorder=4)
     ax.annotate("Substation\n12.66 kV, 1.02 pu", pos[1], textcoords="offset points", xytext=(-4, -24), fontsize=8, ha="left")
     for b in (18, 49, 64):
         ax.scatter(*pos[b], marker="*", s=200, color="#E69F00", edgecolor="black", lw=0.5, zorder=5)
-    for b, lab in (chosen or {}).items():
+    chosen = chosen if chosen is not None else SITES
+    for b, (lab, low) in chosen.items():
         x, y = pos[b]
-        ax.scatter(x, y, marker="o", s=170, facecolor="none", edgecolor="#0072B2", lw=2, zorder=6)
-        ax.annotate(lab, (x, y), textcoords="offset points", xytext=(6, -14), color="#0072B2", fontsize=8)
+        ax.scatter(x, y, marker="s" if low else "o", s=190, facecolor="none",
+                   edgecolor="#CC79A7" if low else "#0072B2", lw=1.8, ls="--" if low else "-", zorder=6)
+        ax.annotate(lab, (x, y), textcoords="offset points", xytext={64: (-24, -26), 65: (20, -26)}.get(b, (0, -17)),
+                    ha="center", va="center" if b in (64, 65) else "baseline",
+                    color="#CC79A7" if low else "#0072B2", fontsize=7.5)
     ax.scatter([], [], marker="*", s=120, color="#E69F00", edgecolor="black", lw=0.5, label="PV plant (18: 0.5, 49: 0.6, 64: 0.5 MWp)")
-    ax.scatter([], [], marker="o", s=90, facecolor="none", edgecolor="#0072B2", lw=2, label="Selected BESS site")
+    ax.scatter([], [], marker="o", s=90, facecolor="none", edgecolor="#0072B2", lw=1.8,
+               label="BESS site at ₹14,000/kWh (0.6 MW, 2.25 MWh)")
+    ax.scatter([], [], marker="s", s=90, facecolor="none", edgecolor="#CC79A7", lw=1.8, ls="--",
+               label="Additional BESS sites at ₹9,000–7,000/kWh")
     ax.legend(loc="upper right", frameon=False, fontsize=8.5)
     ax.set_axis_off()
     ax.set_xlim(-1, 27.5); ax.set_ylim(-4.4, 3.2)

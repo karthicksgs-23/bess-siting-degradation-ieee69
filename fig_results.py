@@ -29,7 +29,7 @@ def fig_inputs():
         ax[1].plot(h, a["PV"][sl].sum(axis=1), color=SCOL[s], label=s.capitalize())
         ax[2].step(h, b["price"][sl] / 1000, where="post", color=SCOL[s], label=f"Case B, {s}")
     ax[2].step(h, a["price"][:24] / 1000, where="post", color="black", ls="--", label="Case A (all seasons)")
-    ax[0].set_ylabel("Feeder load (MW)"); ax[1].set_ylabel("PV output, 1.6 MWp (MW)")
+    ax[0].set_ylabel("Feeder load (MW)"); ax[1].set_ylabel("PV output (MW, 1.6 MWp total)")
     ax[2].set_ylabel("Purchase price (₹/kWh)")
     for x, t in zip(ax, ["(a)", "(b)", "(c)"]):
         x.set_xlabel("Hour (IST)"); x.set_xticks(range(0, 25, 6)); x.grid(alpha=0.3)
@@ -57,7 +57,7 @@ def fig_voltage(pkl="dispatch_market.pkl", out="fig4_voltage.png"):
         ax.axvline(k, color="0.6", lw=0.6)
     for k, s in enumerate(SEASONS):
         ax.text(24 * k + 12, 0.97, s.capitalize(), ha="center", va="top", fontsize=9.5, transform=ax.get_xaxis_transform())
-    ax.set_xlim(0, 72); ax.set_xticks(range(0, 73, 6)); ax.set_xticklabels([str(v % 24) for v in range(0, 73, 6)])
+    ax.set_xlim(0, 72); ax.set_xticks(range(0, 73, 6)); ax.set_xticklabels([str(v % 24) if v < 72 else "24" for v in range(0, 73, 6)])
     ax.set_xlabel("Hour of representative day"); ax.set_ylabel("Voltage at bus 65 (pu)")
     ax.legend(frameon=False, ncol=3, loc="lower right", fontsize=8.5); ax.grid(alpha=0.3)
     fig.tight_layout(); fig.savefig(FIG / out, dpi=300); plt.close(fig)
@@ -67,23 +67,26 @@ def fig_soc(pkl="dispatch_market.pkl", out="fig5_soc.png", title_suffix=""):
     d = load_pkl(pkl)
     fig, ax = plt.subplots(figsize=(10, 3.2))
     x = np.arange(72)
-    for m in ["M0", "M1", "M2"]:
+    for m, ls, lw in [("M0", "-", 1.4), ("M2", "-", 2.2), ("M1", (0, (4, 2)), 1.3)]:   # M1 dashed on top of M2
         k = d["keep"][f"{m}-own"]
         tot_soc = k["soc"].sum(axis=1)
         E = sum(v[1] * 0.25 for v in k["plan"].values())
-        ax.plot(x, 100 * tot_soc / E, color=COL[m], lw=1.4, label=f"{m} ({E:.2f} MWh)")
+        ax.plot(x, 100 * tot_soc / E, color=COL[m], lw=lw, ls=ls, label=f"{m} ({E:.2f} MWh)")
     for k in (24, 48):
         ax.axvline(k, color="0.6", lw=0.6)
-    ax.set_xlim(0, 72); ax.set_xticks(range(0, 73, 6)); ax.set_xticklabels([str(v % 24) for v in range(0, 73, 6)])
+    ax.set_xlim(0, 72); ax.set_xticks(range(0, 73, 6)); ax.set_xticklabels([str(v % 24) if v < 72 else "24" for v in range(0, 73, 6)])
     ax.set_xlabel("Hour of representative day (summer | monsoon | winter)"); ax.set_ylabel("State of charge (%)")
-    ax.legend(frameon=False, ncol=3, fontsize=8.5, loc="upper left"); ax.grid(alpha=0.3); ax.set_ylim(-3, 108)
+    h, l = ax.get_legend_handles_labels(); order = [l.index(f) for f in sorted(l)]
+    ax.legend([h[i] for i in order], [l[i] for i in order], frameon=False, ncol=3, fontsize=8.5,
+              loc="lower center", bbox_to_anchor=(0.5, 1.0)); ax.grid(alpha=0.3); ax.set_ylim(-3, 105)
     fig.tight_layout(); fig.savefig(FIG / out, dpi=300); plt.close(fig)
 
 
 def fig_depth(pkls=("dispatch_market.pkl",), out="fig6_depth.png"):
     bins = np.linspace(0, 1, 11)
+    bins[-1] = 1.0001                                  # full cycles (depth 1.0) fall in the last bin
     fig, ax = plt.subplots(figsize=(6.5, 3.2))
-    width = 0.028
+    width = 0.27
     for j, m in enumerate(["M0", "M1", "M2"]):
         d = load_pkl(pkls[0])
         dl = []
@@ -93,9 +96,15 @@ def fig_depth(pkls=("dispatch_market.pkl",), out="fig6_depth.png"):
             continue
         dd = np.array([x for x, _ in dl]); ww = np.array([c for _, c in dl])
         hist, _ = np.histogram(dd, bins=bins, weights=ww)
-        ax.bar(bins[:-1] + 0.05 + (j - 1) * width, hist, width=width, color=COL[m], label=m)
+        ax.bar(np.arange(10) + (j - 1) * width, hist, width=width, color=COL[m], label=m)
+        for k_, (xb, hb) in enumerate(zip(np.arange(10) + (j - 1) * width, hist)):
+            if hb > 0 and k_ < 9:
+                ax.text(xb, hb + 4, f"{hb:.0f}", ha="center", fontsize=7)
+            elif hb > 0 and j == 1:
+                ax.text(9, hb + 4, f"{hb:.0f} each", ha="center", fontsize=7)
     ax.set_xlabel("Cycle depth (fraction of capacity)"); ax.set_ylabel("Cycles per year")
-    ax.set_xticks(np.linspace(0, 1, 6)); ax.legend(frameon=False); ax.grid(alpha=0.3, axis="y")
+    ax.set_xticks(np.arange(10)); ax.set_xticklabels([f"{a:.1f}–{a + 0.1:.1f}" for a in np.linspace(0, 0.9, 10)], fontsize=8)
+    ax.set_ylim(0, 400); ax.legend(frameon=False, loc="upper left"); ax.grid(alpha=0.3, axis="y")
     fig.tight_layout(); fig.savefig(FIG / out, dpi=300); plt.close(fig)
 
 
@@ -114,7 +123,7 @@ def fig_capex(out="fig7_capex.png"):
     for a in ax:
         a.set_xticks(x); a.set_xticklabels([f"₹{v:,.0f}k" for v, _ in cases])
         a.set_xlabel("Battery energy cost (per kWh)"); a.grid(alpha=0.3, axis="y")
-    ax[0].set_ylabel("Installed energy (MWh)"); ax[1].set_ylabel("Audited regret (₹ million/yr)")
+    ax[0].set_ylabel("Installed energy (MWh)"); ax[1].set_ylabel("Audited regret vs M2 plan (₹ M/yr)")
     ax[0].set_title("(a)", loc="left", fontsize=10); ax[1].set_title("(b)", loc="left", fontsize=10)
     ax[0].legend(frameon=False)
     fig.tight_layout(); fig.savefig(FIG / out, dpi=300); plt.close(fig)
